@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Coast — Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app" id="app">
+  <header class="topbar">
+    <div>
+      <h1>VICE COAST <span>Cover Studio</span></h1>
+      <p>Your photo + a caption, turned into multi-panel sunset cover art. Photos stay on your machine — nothing is uploaded.</p>
+    </div>
+    <div class="steps"><span>1 Photo</span><span>2 Caption</span><span>3 Export PNG</span></div>
+  </header>
+
+  <section class="workspace">
+    <div class="preview-wrap">
+      <canvas id="preview" width="1920" height="1080" aria-label="Live cover preview"></canvas>
+      <p class="hint">Live preview — exactly what the PNG will look like.</p>
+    </div>
+
+    <aside class="controls" aria-label="Cover controls">
+      <section class="panel">
+        <h2>Photos — up to three panels</h2>
+        <p class="panel-note">Each panel takes its own photo, or all three share the first one. Crop with zoom, position with the sliders.</p>
+        <div id="photo-slots"></div>
+        <button id="demo-all" type="button" class="secondary">Load all three demo photos</button>
+      </section>
+
+      <section class="panel">
+        <h2>Layout</h2>
+        <div class="row" id="layout-row"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Colour grade</h2>
+        <div class="row" id="grade-row"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Caption</h2>
+        <label class="field">Title
+          <input id="title" type="text" maxlength="24" value="VICE HEIST">
+        </label>
+        <label class="field">Subtitle
+          <input id="subtitle" type="text" maxlength="60" value="A COVER STORY IN THREE ACTS">
+        </label>
+        <label class="field">Corner badge
+          <input id="tagline" type="text" maxlength="18" value="VICE COAST">
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>Post size</h2>
+        <div class="row" id="size-row"></div>
+        <button id="export" type="button" class="primary">Export PNG</button>
+        <button id="export-all" type="button" class="secondary">Export all three sizes</button>
+        <button id="reset" type="button" class="ghost">Reset cover</button>
+        <p id="status" role="status"></p>
+      </section>
+
+      <p class="fineprint">Original art only: every panel frame, sun, skyline and palm is drawn by this app. No game logo, artwork or font is used. Works fully offline.</p>
+    </aside>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
